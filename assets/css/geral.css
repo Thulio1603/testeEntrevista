@@ -75,12 +75,25 @@ body{
     background: #ffffffb8!important;
     float: left;
 }
+.senhaLabel{
+    width: 10%;
+    float: left;
+}
+.senhaInput{
+    width: 30%!important;
+    height: 30px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
 .btn-primary{
     margin-top: -0.5%;
 }
 .bemvindo{
     margin-top: 5%;
 } 
+.valores{
+    width: 30%;
+}    
 
 
 
