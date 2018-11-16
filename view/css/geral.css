@@ -1,0 +1,87 @@
+body{
+    background: #005aff33!important;
+}    
+.painel{
+    width: 50%;  
+    display: flex;
+    flex-flow: row;      
+    text-align: center;
+    position: relative;
+    left: 24%;
+    height: 30px;
+}
+.painel-item:nth-child(1){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+    border-right: 1px solid;
+    border-color: #005aff47;
+}
+.painel-item:nth-child(2){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;
+    cursor: pointer;
+    border-right: 1px solid;
+    border-color: #005aff47;
+}
+.painel-item:nth-child(3){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+    border-right: 1px solid;
+    border-color: #005aff47;
+}
+.painel-item:nth-child(4){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+}
+.painel-item:hover{
+    background: #005aff8c;,
+}    
+.painelBaixo{
+    width: 50%;  
+      
+    text-align: center;
+    position: relative;
+    left: 24%;
+    height: 30px;
+}
+.nomeLabel{
+    width: 10%;
+    float: left;
+}
+.nomeInput{
+    width: 30%!important;
+    height: 30px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
+.emailLabel{
+    width: 10%;
+    float: left;
+}
+.emailInput{
+    width: 30%!important;
+    height: 30px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
+.btn-primary{
+    margin-top: -0.5%;
+}
+.bemvindo{
+    margin-top: 5%;
+} 
+
+
+
+
