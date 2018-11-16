@@ -39,11 +39,11 @@ class Access {
             $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexao->exec("set names utf8");
             
-            $stmt = $conexao->prepare('UPDATE login_cadastro SET nome = "?", email = "?", senha = "?" WHERE nome = "?" ');
-            $stmt->bindParam(1, $nome);
+            $stmt = $conexao->prepare('UPDATE login_cadastro SET nome = "'.$nome.'", email = "'.$email.'", senha = "'.$senha.'" WHERE nome = "'.$nomePesquisa.'" ');
+           /* $stmt->bindParam(1, $nome);
             $stmt->bindParam(2, $email);
             $stmt->bindParam(3, $senha);
-            $stmt->bindParam(4, $nomePesquisa);
+            $stmt->bindParam(4, $nomePesquisa);*/
 
             if ($stmt->execute()) {
                     if ($stmt->rowCount() > 0) {
@@ -65,8 +65,8 @@ class Access {
             $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexao->exec("set names utf8");
                 
-            $stmt = $conexao->prepare('DELETE FROM login_cadastro WHERE nome =  "?" ');
-            $stmt->bindParam(1, $nome);
+            $stmt = $conexao->prepare('DELETE FROM login_cadastro WHERE nome =  "'.$nome.'" ');
+            //$stmt->bindParam(1, $nome);
             if ($stmt->execute()) {
                     if ($stmt->rowCount() > 0) {
                         echo 1;
