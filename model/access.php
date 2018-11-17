@@ -87,19 +87,18 @@ class Access {
                 $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $conexao->exec("set names utf8");
                 
-                 $stmt = $conexao->prepare(' SELECT * FROM login_cadastro WHERE nome = "?" or email = "?" ');
-                 $stmt->bindParam(1, $nome); 
-                 $stmt->bindParam(2, $email);
+                 $stmt = $conexao->prepare(' SELECT * FROM login_cadastro WHERE nome like ("'.$nome.'") or email like ("'.$email.'") ');
+                /* $stmt->bindParam(1, $nome); 
+                 $stmt->bindParam(2, $email);*/
                 if ($stmt->execute()) {
-                            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {?>
-                                <tr>
-                                    <td><?php echo $rs->nome;?></td>
-                                    <td><?php echo $rs->fone1;?></td>
-                                    <td><?php echo $rs->email_principal;?></td>
-                                    <td> <button name="alterar" value="<?php echo $rs->pes_id;?>"> Alterar </button> </a> | 
-                                    <button name="excluir" value="<?php echo $rs->pes_id;?>">Excluir</button></td> 
-                                </tr>                      
-                           <?php }
+                    $aux = 0;
+                            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                               $nomes[$aux] = $rs->nome.', ';
+                               $emails[$aux++] = $rs->email.', ';                     
+                          }
+                          $nomes = implode($nomes);
+                          $emails = implode($emails);
+                          echo json_encode($nomes).' / '.json_encode($emails);
                         } else {
                             echo "Erro: Não foi possível recuperar os dados do banco de dados";
                         }
