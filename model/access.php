@@ -92,19 +92,27 @@ class Access {
                  $stmt->bindParam(2, $email);*/
                 if ($stmt->execute()) {
                     $aux = 0;
-                            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                               $nomes[$aux] = $rs->nome.', ';
-                               $emails[$aux++] = $rs->email.', ';                     
-                          }
-                          $nomes = implode($nomes);
-                          $emails = implode($emails);
-                          echo json_encode($nomes).' / '.json_encode($emails);
-                        } else {
-                            echo "Erro: Não foi possível recuperar os dados do banco de dados";
-                        }
-                } catch (PDOException $erro) {
-                    echo "Erro: ".$erro->getMessage();
-            }
+                    $nomes = '';
+                    $emails = '';
+                    while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                        if($rs->nome != null && $rs->nome != '' && $rs->email != null && $rs->email != ''){
+                            $nomes[$aux] = $rs->nome.', ';
+                            $emails[$aux++] = $rs->email.', '; 
+                        }                    
+                    }
+                    if($nomes != null && $nomes != '' && $emails != null && $emails != ''){
+                        $nomes = implode($nomes);
+                        $emails = implode($emails);
+                        echo json_encode($nomes).' / '.json_encode($emails);
+                    }else{
+                        echo 0;
+                    }  
+                } else {
+                    echo "Erro: Não foi possível recuperar os dados do banco de dados";
+                }
+        } catch (PDOException $erro) {
+            echo "Erro: ".$erro->getMessage();
+        }
     }
 }
 ?>
