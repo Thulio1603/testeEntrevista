@@ -1,4 +1,5 @@
 <?php
+//esse arquivo recebe uma requisição Ajax de geralJquery.min.js
     require_once("../model/access.php");
     
     $access = new Access();
