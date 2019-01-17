@@ -1,69 +1,232 @@
 <link href="../assets/css/geral.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="../vendor/geralJquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  
+<script type="text/javascript" src="../vendor/geralJquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
 <div class="painel" id="painel">
-        <div id="pesquisar" class="painel-item">Pesquisar</div>
-        <div id="inserir" class="painel-item">Inserir</div>
-        <div id="alterar" class="painel-item">Alterar</div>
-        <div id="deletar" class="painel-item">Deletar</div>
+        <div id="cliente" class="painel-item">Clientes</div>
+        <div id="produto" class="painel-item">Produtos</div>
+        <div id="pedido" class="painel-item">Pedidos</div>
 </div>
-<div class="painelBaixo"> 
+
+<div class="painelBaixo">
+    
     <h5 class="bemvindo" id="bemvindo">Bem vindo</h5>
-    <div id="containerPesquisar">
-        <h5 class="bemvindo" id="bemvindo">Pesquisa</h5>
-        <br />
-        <label class="nomeLabel">Nome: </label>
-        <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeP">
-        <label class="emailLabel">E-mail: </label>
-        <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailP">
-        <button type="submit" class="btn btn-primary" id="buttonPesquisa">Pesquisar</button><br /><br />
+    <div id="containerCliente">
+        <div class="subpainel" id="">  
+            <div id="subInserirC" class="subpainel-item">Inserir Clientes</div>
+            <div id="subProcurarC" class="subpainel-item">Procurar Clientes</div>
+            <div id="subAlterarC" class="subpainel-item">Alterar Clientes</div>
+            <div id="subDeletarC" class="subpainel-item">Deletar Clientes</div>
+        </div>
         
-        <table id="table" class="table">
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-            </tr>
-        </table>
+        <div id="inserirCliente">
+            <h5 class="bemvindo" id="bemvindo">Crie um Cliente</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeI">
+            <label class="emailLabel">E-mail: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailI">
+            <button type="submit" class="btn btn-primary" id="buttonInserir">Inserir</button>
+            <label class="telefoneLabel">Telefone</label>
+            <input class="form-control telefoneInput" type="text" placeholder="Digite.." id="telefoneI">
+        </div>
+        
+        <div id="pesquisarCliente">
+            <h5 class="bemvindo" id="bemvindo">Pesquise um Cliente</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeP">
+            <label class="emailLabel">E-mail: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailP">
+            <button type="submit" class="btn btn-primary" id="buttonPesquisa">Pesquisar</button><br /><br />
+            
+            <table id="tableCliente" class="table">
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </table>
+        </div>
+  
+        <div id="alterarCliente">
+            <h5 class="bemvindo" id="bemvindo">Altere dados do Cliente</h5>
+            <br />
+            <h5>Pesquise pelo nome e embaixo coloque o valor dos novos campos </h5><br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomePesquisa">
+            <br /><br />
+            <h5 class="valores">Novos valores: </h5><br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeA">
+            <label class="emailLabel">E-mail: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailA">
+            <button type="submit" class="btn btn-primary" id="buttonAlterar">Alterar</button>
+            <label class="telefoneLabel">Telefone</label>
+            <input class="form-control telefoneInput" type="text" placeholder="Digite.." id="telefoneA">
+        </div>
+        
+        <div id="deletarCliente">
+            <h5 class="bemvindo" id="bemvindo">Delete um Cliente</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.."id="nomeD">  
+            <button type="submit" class="btn btn-primary" id="buttonDeletar">Deletar</button>
+        </div>
         
     </div>
-    <div id="containerInserir">
-        <h5 class="bemvindo" id="bemvindo">Crie um login</h5>
-        <br />
-        <label class="nomeLabel">Nome: </label>
-        <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeI">
-        <label class="emailLabel">E-mail: </label>
-        <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailI">
-        <button type="submit" class="btn btn-primary" id="buttonInserir">Inserir</button>
-        <label class="senhaLabel">Senha</label>
-        <input class="form-control senhaInput" type="password" placeholder="Digite.." id="senhaI">
+    
+  
+    <div id="containerProdutos">
+        <div class="subpainel" id="">  
+            <div id="subInserirProd" class="subpainel-item">Inserir Produtos</div>
+            <div id="subProcurarProd" class="subpainel-item">Procurar Produtos</div>
+            <div id="subAlterarProd" class="subpainel-item">Alterar Produtos</div>
+            <div id="subDeletarProd" class="subpainel-item">Deletar Produtos</div>
+        </div>
+        
+        <div id="inserirProdutos">
+            <h5 class="bemvindo" id="bemvindo">Crie um Produto</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeProdutoI">
+            <label class="emailLabel">Descrição: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="descricaoProdutoI">
+            <button type="submit" class="btn btn-primary" id="buttonInserirProduto">Inserir</button>
+            <label class="telefoneLabel">Preço: </label>
+            <input class="form-control telefoneInput" type="text" placeholder="Digite.." id="precoProdutoI">
+        </div>
+        
+        <div id="pesquisarProdutos">
+            <h5 class="bemvindo" id="bemvindo">Pesquise um Produto</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeProdutoP">
+            <label class="emailLabel">Descricao: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="descricaoProdutoP">
+            <button type="submit" class="btn btn-primary" id="buttonPesquisaProduto">Pesquisar</button><br /><br />
+            
+            <table id="tableProduto" class="table">
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                </tr>
+            </table>
+        </div>
+  
+        <div id="alterarProdutos">
+            <h5 class="bemvindo" id="bemvindo">Altere dados do Produto</h5>
+            <br />
+            <h5>Pesquise pelo nome e embaixo coloque o valor dos novos campos </h5><br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomePesquisaProd">
+            <br /><br />
+            <h5 class="valores">Novos valores: </h5><br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeProdutoA">
+            <label class="emailLabel">Descricao: </label>
+            <input class="form-control emailInput" type="text" placeholder="Digite.." id="descricaoProdutoA">
+            <button type="submit" class="btn btn-primary" id="buttonAlterarProduto">Alterar</button>
+            <label class="telefoneLabel">Preço: </label>
+            <input class="form-control telefoneInput" type="text" placeholder="Digite.." id="precoProdutoA">
+        </div>
+        
+        <div id="deletarProdutos">
+            <h5 class="bemvindo" id="bemvindo">Delete um Produto</h5>
+            <br />
+            <label class="nomeLabel">Nome: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.."id="nomeProdutoD">  
+            <button type="submit" class="btn btn-primary" id="buttonDeletarProduto">Deletar</button>
+        </div>
+        
     </div>
-    <div id="containerAlterar">
-        <h5 class="bemvindo" id="bemvindo">Altere um login</h5>
-        <br />
-        <h5>Pesquise pelo nome e embaixo coloque o valor dos novos campos </h5><br />
-        <label class="nomeLabel">Nome: </label>
-        <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomePesquisa">
-        <br /><br />
-        <h5 class="valores">Novos valores: </h5><br />
-        <label class="nomeLabel">Nome: </label>
-        <input class="form-control nomeInput" type="text" placeholder="Digite.." id="nomeA">
-        <label class="emailLabel">E-mail: </label>
-        <input class="form-control emailInput" type="text" placeholder="Digite.." id="emailA">
-        <button type="submit" class="btn btn-primary" id="buttonAlterar">Alterar</button>
-        <label class="senhaLabel">Senha</label>
-        <input class="form-control senhaInput" type="password" placeholder="Digite.." id="senhaA">
-    </div>
-    <div id="containerDeletar">
-        <h5 class="bemvindo" id="bemvindo">Delete um login</h5>
-        <br />
-        <label class="nomeLabel">Nome: </label>
-        <input class="form-control nomeInput" type="text" placeholder="Digite.."id="nomeD">  
-        <button type="submit" class="btn btn-primary" id="buttonDeletar">Deletar</button>
+    
+    <div id="containerPedidos">
+        <div class="subpainel" id="">  
+            <div id="subInserirPed" class="subpainel-item">Inserir Pedidos</div>
+            <div id="subProcurarPed" class="subpainel-item">Procurar Pedidos</div>
+            <div id="subAlterarPed" class="subpainel-item">Alterar Pedidos</div>
+            <div id="subDeletarPed" class="subpainel-item">Deletar Pedidos</div>
+        </div>
+        
+        <div id="inserirPedidos">
+            <h5 class="bemvindo" id="bemvindo">Crie um Pedido</h5>
+            <br />
+            <label class="nomeLabel">Data: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="dataI">
+            <label class="emailLabel">Cliente: </label>
+            <select class="form-control emailInputPed" id="clienteI">
+                <option value="">Selecione...</option>
+            </select>
+            <button type="submit" class="btn btn-primary" id="buttonInserirPedido">Inserir</button>
+            <label class="telefoneLabel">Produto</label>
+            <select  class="form-control telefoneInputPed" id="produtoI">
+                <option value="">Selecione...</option>
+            </select>
+            <label class="emailLabel">Qtde: </label>
+            <input class="form-control qtdeInputPed" type="text" placeholder="Digite.." id="qtdeI">
+        </div>
+        
+        <div id="pesquisarPedidos">
+            <h5 class="bemvindo" id="bemvindo">Pesquise um Pedido</h5>
+            <br />
+            <label class="emailLabel">Cliente: </label>
+            <select class="form-control emailInputPed" id="clienteP">
+                <option value="">Selecione...</option>
+            </select>
+            <label class="telefoneLabel">Produto</label>
+            <select  class="form-control telefoneInputPed" id="produtop">
+                <option value="">Selecione...</option>
+            </select>
+            <button type="submit" class="btn btn-primary" id="buttonPesquisaPedido">Pesquisar</button><br /><br />
+            
+            <table id="tablePed" class="table">
+                <tr>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Produto</th>
+                    <th>Qtde</th>
+                </tr>
+            </table>
+        </div>
+  
+        <div id="alterarPedidos">
+            <h5 class="bemvindo" id="bemvindo">Altere dados do Pedido</h5>
+            <br />
+            <h5>Pesquise pelo Cliente e embaixo coloque o valor dos novos campos </h5><br />
+            <label class="emailLabel">Cliente: </label>
+            <select class="form-control emailInputPed" id="nomePesquisaPed">
+                <option value="">Selecione...</option>
+            </select>
+            <br /><br />
+            <h5 class="valores">Novos valores: </h5><br />
+            <label class="emailLabel">Cliente: </label>
+            <select class="form-control emailInputPed" id="clienteA">
+                <option value="">Selecione...</option>
+            </select>
+            <label class="telefoneLabel">Produto</label>
+            <select  class="form-control telefoneInputPed" id="produtoA">
+                <option value="">Selecione...</option>
+            </select>
+            <button type="submit" class="btn btn-primary" id="buttonAlterarPedido">Alterar</button>
+            <label class="telefoneLabel">Qtde</label>
+            <input class="form-control telefoneInput" type="text" placeholder="Digite.." id="qtdeA">
+            <label class="nomeLabel">Data: </label>
+            <input class="form-control nomeInput" type="text" placeholder="Digite.." id="dataA">
+        </div>
+        
+        <div id="deletarPedidos">
+            <h5 class="bemvindo" id="bemvindo">Delete um Pedido</h5>
+            <br />
+            <label class="emailLabel">Cliente: </label>
+            <select class="form-control emailInputPed" id="nomeDelet">
+                <option value="">Selecione...</option>
+            </select>
+            <button type="submit" class="btn btn-primary" id="buttonDeletarPedido">Deletar</button>
+        </div>
     </div>
 </div>

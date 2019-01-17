@@ -44,9 +44,48 @@ body{
     max-width: 65%;  
     cursor: pointer;
 }
+.subpainel{
+    width: 100%;  
+    display: flex;
+    flex-flow: row;      
+    text-align: center;
+    position: relative;
+    height: 30px;
+}
+.subpainel-item:nth-child(1){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+}
+.subpainel-item:nth-child(2){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+}
+.subpainel-item:nth-child(3){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+}
+.subpainel-item:nth-child(4){
+    background: #005aff47;
+    list-style-type: none;
+    flex: 25%;
+    max-width: 65%;  
+    cursor: pointer;
+}
 .painel-item:hover{
-    background: #005aff8c;,
-}    
+    background: #005aff8c;
+}   
+.subpainel-item:hover{
+    background: #005aff8c;
+}  
 .painelBaixo{
     width: 50%;  
       
@@ -75,11 +114,29 @@ body{
     background: #ffffffb8!important;
     float: left;
 }
-.senhaLabel{
+.emailInputPed{
+    width: 30%!important;
+    height: 33px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
+.qtdeInputPed{
+    width: 30%!important;
+    height: 33px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
+.telefoneInputPed{
+    width: 30%!important;
+    height: 33px!important;
+    background: #ffffffb8!important;
+    float: left;
+}
+.telefoneLabel{
     width: 10%;
     float: left;
 }
-.senhaInput{
+.telefoneInput{
     width: 30%!important;
     height: 30px!important;
     background: #ffffffb8!important;
